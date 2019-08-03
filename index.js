@@ -35,7 +35,7 @@ AJPNG.parseBuffer = function (buffer) { return parseAPNG(new Uint8Array(buffer))
  * @return {Promise}
  */
 AJPNG.parseURL = function (url) {
-    const _url = url.className.match(/(\w+)-apng/)[1]
+    var _url = url.className.match(/(\w+)-apng/)[1]
     if (!(_url in url2promise)) url2promise[_url] = loadUrl(url).then(parseAPNG);
     return url2promise[_url];
 };
